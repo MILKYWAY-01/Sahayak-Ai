@@ -3,6 +3,7 @@
 
     <!-- Header -->
     <string name="menu">Menu</string>
+    <string name="sahayak_ai_title">Sahayak-Ai</string>
 
     <!-- Overview Section -->
     <string name="overview">Overview</string>
@@ -11,6 +12,9 @@
     <string name="approved">Approved</string>
     <string name="rejected">Rejected</string>
     <string name="pending">Pending</string>
+
+    <string name="default_count">0</string>
+    <string name="default_percent">--</string>
 
     <!-- Government Services -->
     <string name="government_services">Government Services</string>
@@ -33,7 +37,7 @@
 
     <!-- Bottom Nav -->
     <string name="nav_home">Home</string>
-    <string name="nav_services">Services</string>
+    <string name="nav_services">Application</string>
     <string name="nav_schemes">Schemes</string>
     <string name="nav_profile">Profile</string>
     <string name="ai_assistant">AI Assistant</string>

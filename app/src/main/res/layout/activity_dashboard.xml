@@ -32,20 +32,11 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="68dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp">
-
-                        <ImageButton
-                            android:id="@+id/btnMenu"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="?attr/selectableItemBackgroundBorderless"
-                            android:contentDescription="@string/menu"
-                            android:src="@drawable/ic_menu"
-                            app:tint="@color/primary" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -54,7 +45,7 @@
                             android:layout_weight="1"
                             android:text="Sahayak-Ai"
                             android:textColor="@color/primary"
-                            android:textSize="18sp"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -138,6 +129,7 @@
                                         app:tint="@color/primary" />
 
                                     <TextView
+                                        android:id="@+id/tvTotalAppsPercent"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="8dp"
@@ -146,7 +138,7 @@
                                         android:paddingTop="2dp"
                                         android:paddingEnd="6dp"
                                         android:paddingBottom="2dp"
-                                        android:text="+12%"
+                                        android:text="--"
                                         android:textColor="@color/primary"
                                         android:textSize="10sp"
                                         android:textStyle="bold" />
@@ -154,10 +146,11 @@
                                 </LinearLayout>
 
                                 <TextView
+                                    android:id="@+id/tvTotalAppsCount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="1,284"
+                                    android:text="0"
                                     android:textColor="@color/text_primary"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -203,6 +196,7 @@
                                         app:tint="@color/emerald" />
 
                                     <TextView
+                                        android:id="@+id/tvApprovedPercent"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="8dp"
@@ -211,7 +205,7 @@
                                         android:paddingTop="2dp"
                                         android:paddingEnd="6dp"
                                         android:paddingBottom="2dp"
-                                        android:text="+8%"
+                                        android:text="--"
                                         android:textColor="@color/emerald"
                                         android:textSize="10sp"
                                         android:textStyle="bold" />
@@ -219,10 +213,11 @@
                                 </LinearLayout>
 
                                 <TextView
+                                    android:id="@+id/tvApprovedCount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="950"
+                                    android:text="0"
                                     android:textColor="@color/emerald"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -268,6 +263,7 @@
                                         app:tint="@color/rose" />
 
                                     <TextView
+                                        android:id="@+id/tvRejectedPercent"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="8dp"
@@ -276,7 +272,7 @@
                                         android:paddingTop="2dp"
                                         android:paddingEnd="6dp"
                                         android:paddingBottom="2dp"
-                                        android:text="-5%"
+                                        android:text="--"
                                         android:textColor="@color/rose"
                                         android:textSize="10sp"
                                         android:textStyle="bold" />
@@ -284,10 +280,11 @@
                                 </LinearLayout>
 
                                 <TextView
+                                    android:id="@+id/tvRejectedCount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="120"
+                                    android:text="0"
                                     android:textColor="@color/rose"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -333,6 +330,7 @@
                                         app:tint="@color/amber" />
 
                                     <TextView
+                                        android:id="@+id/tvPendingPercent"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="8dp"
@@ -341,7 +339,7 @@
                                         android:paddingTop="2dp"
                                         android:paddingEnd="6dp"
                                         android:paddingBottom="2dp"
-                                        android:text="-2%"
+                                        android:text="--"
                                         android:textColor="@color/amber"
                                         android:textSize="10sp"
                                         android:textStyle="bold" />
@@ -349,10 +347,11 @@
                                 </LinearLayout>
 
                                 <TextView
+                                    android:id="@+id/tvPendingCount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="214"
+                                    android:text="0"
                                     android:textColor="@color/amber"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -611,145 +610,6 @@
                 </LinearLayout>
 
                 <!-- ===== NEW SCHEMES SECTION ===== -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/new_schemes"
-                        android:textColor="@color/text_primary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <!-- Solar Rooftop Subsidy Card (Primary color bg) -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?attr/selectableItemBackground"
-                        app:cardBackgroundColor="@color/primary"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:background="@drawable/bg_circle_white_20"
-                                android:padding="12dp"
-                                android:src="@drawable/ic_energy"
-                                app:tint="@android:color/white" />
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/solar_rooftop"
-                                    android:textColor="@android:color/white"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="4dp"
-                                    android:text="@string/solar_desc"
-                                    android:textColor="#CCFFFFFF"
-                                    android:textSize="11sp" />
-
-                            </LinearLayout>
-
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:src="@drawable/ic_chevron_right"
-                                app:tint="#80FFFFFF" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- Digital Literacy 2.0 Card (White bg) -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?attr/selectableItemBackground"
-                        app:cardBackgroundColor="@android:color/white"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="2dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:background="@drawable/bg_circle_primary_10"
-                                android:padding="12dp"
-                                android:src="@drawable/ic_school"
-                                app:tint="@color/primary" />
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/digital_literacy"
-                                    android:textColor="@color/text_primary"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="4dp"
-                                    android:text="@string/digital_desc"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="11sp" />
-
-                            </LinearLayout>
-
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:src="@drawable/ic_chevron_right"
-                                app:tint="@color/text_secondary" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
 
             </LinearLayout>
 

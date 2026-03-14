@@ -21,6 +21,9 @@
             android:name=".dashboard"
             android:exported="false" />
         <activity
+            android:name=".schemes"
+            android:exported="false" />
+        <activity
             android:name=".logo"
             android:exported="true">
             <intent-filter>
