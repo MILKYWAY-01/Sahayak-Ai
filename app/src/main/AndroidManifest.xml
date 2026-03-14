@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SahayakAi">
         <activity
+            android:name=".dashboard"
+            android:exported="false" />
+        <activity
             android:name=".logo"
             android:exported="true">
             <intent-filter>

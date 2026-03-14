@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">Sahayak-Ai</string>
+    <string name="app_name">CSC AI Co-Pilot</string>
+
+    <!-- Header -->
+    <string name="menu">Menu</string>
+
+    <!-- Overview Section -->
+    <string name="overview">Overview</string>
+    <string name="today">Today</string>
+    <string name="total_apps">Total Apps</string>
+    <string name="approved">Approved</string>
+    <string name="rejected">Rejected</string>
+    <string name="pending">Pending</string>
+
+    <!-- Government Services -->
+    <string name="government_services">Government Services</string>
+    <string name="view_all">View all</string>
+    <string name="income_certificate">Income Certificate</string>
+    <string name="revenue_dept">Revenue Dept</string>
+    <string name="caste_certificate">Caste Certificate</string>
+    <string name="social_welfare">Social Welfare</string>
+    <string name="residence_cert">Residence Cert</string>
+    <string name="general_admin">General Admin</string>
+    <string name="birth_cert">Birth Cert</string>
+    <string name="health_dept">Health Dept</string>
+
+    <!-- New Schemes -->
+    <string name="new_schemes">New Schemes</string>
+    <string name="solar_rooftop">Solar Rooftop Subsidy</string>
+    <string name="solar_desc">Up to 40% financial assistance for households</string>
+    <string name="digital_literacy">Digital Literacy 2.0</string>
+    <string name="digital_desc">Free training for rural entrepreneurs</string>
+
+    <!-- Bottom Nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_services">Services</string>
+    <string name="nav_schemes">Schemes</string>
+    <string name="nav_profile">Profile</string>
+    <string name="ai_assistant">AI Assistant</string>
 </resources>
