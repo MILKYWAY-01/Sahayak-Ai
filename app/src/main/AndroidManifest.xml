@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SahayakAi">
         <activity
+            android:name=".ResisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".dashboard"
             android:exported="false" />
         <activity
