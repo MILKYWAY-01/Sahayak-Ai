@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary brand colors -->
-    <color name="primary">#FF1A1A7F</color>
+    <color name="primary">#1A1A7F</color>
     <color name="primary_light">#0D1A1A7F</color>  <!-- primary @ 5% opacity -->
     <color name="primary_10">#1A1A1A7F</color>      <!-- primary @ 10% opacity -->
+    <color name="primary_20">#331A1A7F</color>      <!-- primary @ 20% opacity -->
 
     <!-- Background -->
-    <color name="background_light">#FFF6F6F8</color>
-    <color name="background_dark">#FF121220</color>
+    <color name="background_light">#F6F6F8</color>
+    <color name="background_dark">#121220</color>
 
     <!-- Text -->
-    <color name="text_primary">#FF0F172A</color>
-    <color name="text_secondary">#FF64748B</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="slate_600">#475569</color>
+    <color name="slate_400">#94A3B8</color>
+    <color name="slate_300">#CBD5E1</color>
 
     <!-- Status colors - Emerald (approved) -->
-    <color name="emerald">#FF059669</color>
-    <color name="emerald_light">#FFECFDF5</color>
-    <color name="emerald_badge">#FFD1FAE5</color>
+    <color name="emerald">#059669</color>
+    <color name="emerald_light">#ECFDF5</color>
+    <color name="emerald_badge">#D1FAE5</color>
 
     <!-- Status colors - Rose (rejected) -->
-    <color name="rose">#FFE11D48</color>
-    <color name="rose_light">#FFFFF1F2</color>
-    <color name="rose_badge">#FFFFE4E6</color>
+    <color name="rose">#E11D48</color>
+    <color name="rose_light">#FFF1F2</color>
+    <color name="rose_badge">#FFE4E6</color>
 
     <!-- Status colors - Amber (pending) -->
-    <color name="amber">#FFD97706</color>
-    <color name="amber_light">#FFFFFBEB</color>
-    <color name="amber_badge">#FFFEF3C7</color>
+    <color name="amber">#D97706</color>
+    <color name="amber_light">#FFFBEB</color>
+    <color name="amber_badge">#FEF3C7</color>
 
     <!-- Service icon backgrounds -->
-    <color name="indigo">#FF4338CA</color>
-    <color name="indigo_light">#FFE0E7FF</color>
+    <color name="indigo">#4338CA</color>
+    <color name="indigo_light">#E0E7FF</color>
 
-    <color name="orange">#FFC2410C</color>
-    <color name="orange_light">#FFFFEDD5</color>
+    <color name="orange">#C2410C</color>
+    <color name="orange_light">#FFEDD5</color>
 
-    <color name="blue">#FF2563EB</color>
-    <color name="blue_light">#FFDBEAFE</color>
+    <color name="blue">#2563EB</color>
+    <color name="blue_light">#DBEAFE</color>
 
-    <color name="pink">#FFBE185D</color>
-    <color name="pink_light">#FFFCE7F3</color>
+    <color name="pink">#BE185D</color>
+    <color name="pink_light">#FCE7F3</color>
 
     <!-- Solar guide specific -->
-    <color name="green_check">#FF16A34A</color>
-    <color name="border">#FFE2E8F0</color>
+    <color name="green_check">#16A34A</color>
+    <color name="border">#E2E8F0</color>
 
     <!-- Whites -->
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="white_20">#33FFFFFF</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#000000</color>
 
     <!-- Bottom nav -->
-    <color name="nav_inactive">#FF94A3B8</color>
+    <color name="nav_inactive">#94A3B8</color>
 
     <!-- Legacy default colors -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
 </resources>

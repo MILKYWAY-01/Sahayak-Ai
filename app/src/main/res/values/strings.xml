@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CSC AI Co-Pilot</string>
+    <string name="app_name">Sahayak-AI</string>
 
     <!-- Header -->
     <string name="menu">Menu</string>
@@ -40,7 +40,7 @@
 
     <!-- Solar Guide -->
     <string name="pros_solar_guide_title">Solar Rooftop Subsidy Guide</string>
-    <string name="pros_csc_operator_portal">CSC OPERATOR PORTAL</string>
+    <string name="pros_csc_operator_portal">SAHAYAK-AI OPERATOR PORTAL</string>
     <string name="pros_solar_guide_desc">This government initiative provides financial assistance to residential consumers for installing solar panels. Operators must ensure all documentation is accurate to facilitate the direct benefit transfer (DBT) to citizens.</string>
     <string name="pros_how_to_fill">HOW TO FILL THE FORM</string>
 
@@ -70,7 +70,7 @@
 
     <!-- activity_applications.xml — Header -->
     <string name="header_title">My Applications</string>
-    <string name="header_subtitle">CSC Operator Portal</string>
+    <string name="header_subtitle">Sahayak-AI Operator Portal</string>
 
     <!-- activity_applications.xml — Tab labels -->
     <string name="tab_all">All</string>
@@ -120,5 +120,38 @@
     <string name="cd_location">Location</string>
     <string name="cd_date">Submission date</string>
     <string name="cd_resubmit">Resubmit icon</string>
+
+    <!-- Login Activity -->
+    <string name="login_header">Sahayak-AI Operator Portal</string>
+    <string name="login_title">Welcome Back</string>
+    <string name="login_desc">Enter your credentials to access your Sahayak-AI dashboard and manage applications.</string>
+    <string name="tab_operator">Operator</string>
+    <string name="tab_citizen">Citizen</string>
+    <string name="label_operator_id">Operator ID</string>
+    <string name="placeholder_operator_id">Enter your ID</string>
+    <string name="label_password">Password</string>
+    <string name="placeholder_password">Enter password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="btn_login">Login</string>
+    <string name="footer_text">Secure access for authorized personnel only.</string>
+    <string name="link_terms">TERMS OF USE</string>
+    <string name="link_privacy">PRIVACY POLICY</string>
+
+    <!-- Register Activity -->
+    <string name="register_header">Sign Up</string>
+    <string name="register_subtitle">Register your CSC Center to get started</string>
+    <string name="register_title">Create Account</string>
+    <string name="label_operator_name">Operator Name</string>
+    <string name="placeholder_operator_name">Enter full name</string>
+    <string name="label_csc_center_id">CSC Center ID</string>
+    <string name="placeholder_csc_center_id">e.g. 123456789012</string>
+    <string name="label_mobile_number">Mobile Number</string>
+    <string name="placeholder_mobile_number">+91 00000 00000</string>
+    <string name="label_email_address">Email Address</string>
+    <string name="placeholder_email_address">name@example.com</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="btn_register">Create Account</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="link_login">Log in</string>
 
 </resources>
