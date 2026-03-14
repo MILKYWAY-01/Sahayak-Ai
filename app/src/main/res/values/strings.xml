@@ -67,4 +67,58 @@
     <string name="pros_start_new_application">Start New Application</string>
     <string name="pros_nav_applications">Applications</string>
     <string name="pros_nav_guide">Guide</string>
+
+    <!-- activity_applications.xml — Header -->
+    <string name="header_title">My Applications</string>
+    <string name="header_subtitle">CSC Operator Portal</string>
+
+    <!-- activity_applications.xml — Tab labels -->
+    <string name="tab_all">All</string>
+    <string name="tab_pending">Pending</string>
+    <string name="tab_rejected">Rejected</string>
+    <string name="tab_rejected_count">4</string>
+
+    <!-- activity_applications.xml — Section header -->
+    <string name="section_label">Rejected Applications</string>
+    <string name="section_meta">Requires action</string>
+
+    <!-- activity_applications.xml — Badge -->
+    <string name="badge_urgent">Urgent</string>
+
+    <!-- activity_applications.xml — Button -->
+    <string name="btn_resubmit">Resubmit Application</string>
+
+    <!-- activity_applications.xml — Card 1 -->
+    <string name="card1_title">Income Certificate</string>
+    <string name="card1_location">Revenue Dept, Delhi</string>
+    <string name="card1_date">Submitted: 10 Mar 2025</string>
+    <string name="card1_reason">Document mismatch. The uploaded Aadhaar card photo is blurry and details cannot be verified.</string>
+
+    <!-- activity_applications.xml — Card 2 -->
+    <string name="card2_title">Caste Certificate</string>
+    <string name="card2_location">Social Welfare, Mumbai</string>
+    <string name="card2_date">Submitted: 08 Mar 2025</string>
+    <string name="card2_reason">Address proof expired. Please upload a utility bill or rental agreement dated within the last 3 months.</string>
+
+    <!-- activity_applications.xml — Card 3 -->
+    <string name="card3_title">Form 16 Tax</string>
+    <string name="card3_location">Income Tax Dept, Pune</string>
+    <string name="card3_date">Submitted: 05 Mar 2025</string>
+    <string name="card3_reason">Signature missing on Form 16. Ensure the declaration section is manually signed before scanning.</string>
+
+    <!-- activity_applications.xml — Card 4 -->
+    <string name="card4_title">Birth Certificate</string>
+    <string name="card4_location">Health Dept, Bangalore</string>
+    <string name="card4_date">Submitted: 02 Mar 2025</string>
+    <string name="card4_reason">Name discrepancy. The name on the application form does not match the name on the birth certificate.</string>
+
+    <!-- activity_applications.xml — Content Descriptions -->
+    <string name="cd_back">Back</string>
+    <string name="cd_search">Search or filter applications</string>
+    <string name="cd_menu">View menu</string>
+    <string name="cd_application_icon">Application icon</string>
+    <string name="cd_location">Location</string>
+    <string name="cd_date">Submission date</string>
+    <string name="cd_resubmit">Resubmit icon</string>
+
 </resources>
