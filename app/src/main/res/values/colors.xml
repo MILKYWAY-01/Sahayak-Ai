@@ -41,6 +41,10 @@
     <color name="pink">#FFBE185D</color>
     <color name="pink_light">#FFFCE7F3</color>
 
+    <!-- Solar guide specific -->
+    <color name="green_check">#FF16A34A</color>
+    <color name="border">#FFE2E8F0</color>
+
     <!-- Whites -->
     <color name="white">#FFFFFFFF</color>
     <color name="white_20">#33FFFFFF</color>

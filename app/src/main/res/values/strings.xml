@@ -37,4 +37,34 @@
     <string name="nav_schemes">Schemes</string>
     <string name="nav_profile">Profile</string>
     <string name="ai_assistant">AI Assistant</string>
+
+    <!-- Solar Guide -->
+    <string name="pros_solar_guide_title">Solar Rooftop Subsidy Guide</string>
+    <string name="pros_csc_operator_portal">CSC OPERATOR PORTAL</string>
+    <string name="pros_solar_guide_desc">This government initiative provides financial assistance to residential consumers for installing solar panels. Operators must ensure all documentation is accurate to facilitate the direct benefit transfer (DBT) to citizens.</string>
+    <string name="pros_how_to_fill">HOW TO FILL THE FORM</string>
+
+    <string name="pros_step_1_title">Aadhaar Verification</string>
+    <string name="pros_step_1_desc">Enter consumer\'s Aadhaar number and perform E-KYC via OTP or Biometric. Ensure the name matches the electricity bill.</string>
+    <string name="pros_step_2_title">Income &amp; Bank Details</string>
+    <string name="pros_step_2_desc">Input annual household income and link the bank account for subsidy disbursement. Passbook copy required.</string>
+    <string name="pros_step_3_title">Roof Photo Upload</string>
+    <string name="pros_step_3_desc">Upload clear, high-resolution photos of the rooftop area. Geo-tagging must be enabled on the capture device.</string>
+    <string name="pros_step_4_title">Technical Specifications</string>
+    <string name="pros_step_4_desc">Select the requested capacity (kW) and type of solar module based on the consumer\'s monthly energy consumption.</string>
+
+    <string name="pros_required_documents">Required Documents</string>
+    <string name="pros_doc_1">Recent Electricity Bill (Last 3 months)</string>
+    <string name="pros_doc_2">Aadhaar Card of Applicant</string>
+    <string name="pros_doc_3">Bank Passbook / Cancelled Cheque</string>
+    <string name="pros_doc_4">Passport Size Photograph</string>
+
+    <string name="pros_operator_tips">Operator Tips</string>
+    <string name="pros_tip_1">Ensure the mobile number is linked with Aadhaar for faster OTP verification.</string>
+    <string name="pros_tip_2">Verify that the rooftop area is shadow-free for maximum efficiency approval.</string>
+    <string name="pros_tip_3">Double-check the Bank IFSC code to prevent subsidy payment failures.</string>
+
+    <string name="pros_start_new_application">Start New Application</string>
+    <string name="pros_nav_applications">Applications</string>
+    <string name="pros_nav_guide">Guide</string>
 </resources>
