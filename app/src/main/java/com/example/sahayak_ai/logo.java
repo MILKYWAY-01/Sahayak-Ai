@@ -1,6 +1,9 @@
 package com.example.sahayak_ai;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +23,15 @@ public class logo extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Delay for 3 seconds before moving to the dashboard
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(logo.this, dashboard.class);
+                startActivity(intent);
+                finish(); // Close logo activity so user can't go back to it
+            }
+        }, 3000);
     }
 }

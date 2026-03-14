@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SahayakAi">
         <activity
+            android:name=".applications"
+            android:exported="false" />
+        <activity
             android:name=".dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".schemes"
             android:exported="false" />
         <activity
             android:name=".logo"

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "270400449706",
+    "firebase_url": "https://sahayakai-56b58-default-rtdb.firebaseio.com",
+    "project_id": "sahayakai-56b58",
+    "storage_bucket": "sahayakai-56b58.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270400449706:android:c2e3916e6b843a22eeb4d3",
+        "android_client_info": {
+          "package_name": "com.example.sahayak_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaRE2-J1yd8oUzO615rJoZ7n0Q6EhK9_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
