@@ -140,6 +140,8 @@
     <string name="footer_text">Secure access for authorized personnel only.</string>
     <string name="link_terms">TERMS OF USE</string>
     <string name="link_privacy">PRIVACY POLICY</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="link_register">Register Now</string>
 
     <!-- Register Activity -->
     <string name="register_header">Sign Up</string>

@@ -2,6 +2,9 @@ package com.example.sahayak_ai;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -24,10 +27,11 @@ import java.util.List;
 
 public class applications extends AppCompatActivity {
 
-    private RecyclerView rvApplications;
     private ApplicationAdapter applicationAdapter;
     private List<ApplicationModel> applicationList;
     private DatabaseReference databaseReference;
+    private String filterServiceType;
+    private TextView tvHeaderTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +39,31 @@ public class applications extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_applications);
 
+        // Get filter from intent if opened from dashboard
+        filterServiceType = getIntent().getStringExtra("SERVICE_TYPE");
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.appBarLayout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0); // Bottom padding not needed since it's a fixed header
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
             return insets;
         });
 
+        // Setup Back Button
+        View flBack = findViewById(R.id.flBack);
+        if (flBack != null) {
+            flBack.setOnClickListener(v -> finish());
+        }
+
+        tvHeaderTitle = findViewById(R.id.tvHeaderTitle);
+        if (filterServiceType != null && tvHeaderTitle != null) {
+            // Set header title based on selected service
+            String title = filterServiceType.replace("_", " ");
+            title = title.substring(0, 1).toUpperCase() + title.substring(1);
+            tvHeaderTitle.setText(title);
+        }
+
         // Initialize RecyclerView and list
-        rvApplications = findViewById(R.id.rvApplications);
+        RecyclerView rvApplications = findViewById(R.id.rvApplications);
         rvApplications.setLayoutManager(new LinearLayoutManager(this));
         applicationList = new ArrayList<>();
         applicationAdapter = new ApplicationAdapter(applicationList);
@@ -50,7 +71,7 @@ public class applications extends AppCompatActivity {
 
         // Initialize Firebase Database reference
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://sahayakai-56b58-default-rtdb.firebaseio.com/");
-        databaseReference = database.getReference("applications"); // assuming 'applications' is the node
+        databaseReference = database.getReference("applications");
 
         // Fetch data
         fetchApplications();
@@ -60,14 +81,21 @@ public class applications extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                applicationList.clear(); // Clear the list to avoid duplicate entries on update
+                applicationList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     ApplicationModel model = dataSnapshot.getValue(ApplicationModel.class);
                     if (model != null) {
-                        applicationList.add(model);
+                        // If a filter is active, only show applications of that type
+                        if (filterServiceType == null || filterServiceType.equals(model.getServiceType())) {
+                            applicationList.add(model);
+                        }
                     }
                 }
                 applicationAdapter.notifyDataSetChanged();
+                
+                if (applicationList.isEmpty()) {
+                    Toast.makeText(applications.this, "No applications found.", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override

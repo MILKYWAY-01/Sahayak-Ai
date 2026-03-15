@@ -26,17 +26,6 @@
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="12dp">
 
-                <ImageView
-                    android:id="@+id/ivHeaderIcon"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:contentDescription="@string/app_name"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_launcher_foreground"
-                    app:tint="@color/primary" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -77,7 +66,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:contentDescription="@null"
+                            android:contentDescription="@string/app_name"
                             android:src="@android:drawable/ic_lock_lock"
                             app:tint="@color/white" />
                     </FrameLayout>
@@ -105,16 +94,6 @@
                     android:textSize="15sp" />
 
             </LinearLayout>
-
-            <!-- Login Tabs (Hidden/Gone) -->
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/loginTabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:tabIndicatorColor="@color/primary"
-                app:tabSelectedTextColor="@color/primary"
-                app:tabTextColor="@color/text_secondary" />
 
             <!-- Form Fields -->
             <com.google.android.material.card.MaterialCardView
@@ -149,10 +128,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="20dp"
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
                         android:autofillHints="username"
                         android:background="@drawable/et_selector"
-                        android:hint="@string/placeholder_operator_id"
-                        android:inputType="text"
+                        android:hint="@string/placeholder_email_address"
                         android:paddingHorizontal="16dp"
                         android:textColor="@color/text_primary"
                         android:textColorHint="@color/slate_400"
@@ -210,13 +190,14 @@
                         android:text="@string/forgot_password"
                         android:textColor="@color/primary"
                         android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:translationX="5dp" />
 
-                    <!-- Login Button -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnLogin"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
+                        android:layout_marginBottom="20dp"
                         android:backgroundTint="@color/primary"
                         android:insetTop="0dp"
                         android:insetBottom="0dp"
@@ -231,6 +212,32 @@
                         app:iconGravity="textEnd"
                         app:iconSize="12dp"
                         app:iconTint="@color/white" />
+
+                    <!-- Register Link -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dont_have_account"
+                            android:textColor="@color/slate_600"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvRegisterLink"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:padding="4dp"
+                            android:text="@string/link_register"
+                            android:textColor="@color/primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

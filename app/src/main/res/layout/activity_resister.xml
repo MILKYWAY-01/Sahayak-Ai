@@ -25,18 +25,6 @@
                 android:layout_height="72dp"
                 android:paddingHorizontal="16dp">
 
-                <ImageView
-                    android:id="@+id/btnBack"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="@string/cd_back"
-                    android:padding="8dp"
-                    android:src="@android:drawable/ic_menu_revert"
-                    app:tint="@color/text_primary" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -131,6 +119,7 @@
                         android:textSize="14sp" />
 
                     <EditText
+                        android:id="@+id/etOperatorName"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="16dp"
@@ -154,6 +143,7 @@
                         android:textSize="14sp" />
 
                     <EditText
+                        android:id="@+id/etCscId"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="16dp"
@@ -161,29 +151,6 @@
                         android:background="@drawable/et_selector"
                         android:hint="@string/placeholder_csc_center_id"
                         android:inputType="number"
-                        android:paddingHorizontal="16dp"
-                        android:textColor="@color/text_primary"
-                        android:textColorHint="@color/slate_400"
-                        android:textSize="15sp" />
-
-                    <!-- Mobile Number -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/label_mobile_number"
-                        android:textColor="@color/text_primary"
-                        android:textSize="14sp" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginBottom="16dp"
-                        android:autofillHints="phone"
-                        android:background="@drawable/et_selector"
-                        android:hint="@string/placeholder_mobile_number"
-                        android:inputType="phone"
                         android:paddingHorizontal="16dp"
                         android:textColor="@color/text_primary"
                         android:textColorHint="@color/slate_400"
@@ -200,6 +167,7 @@
                         android:textSize="14sp" />
 
                     <EditText
+                        android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="16dp"
@@ -223,6 +191,7 @@
                         android:textSize="14sp" />
 
                     <EditText
+                        android:id="@+id/etPassword"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="16dp"
@@ -246,6 +215,7 @@
                         android:textSize="14sp" />
 
                     <EditText
+                        android:id="@+id/etConfirmPassword"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="24dp"

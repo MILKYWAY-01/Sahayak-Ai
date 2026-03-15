@@ -396,8 +396,11 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvViewAllServices"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:text="@string/view_all"
                             android:textColor="@color/primary"
                             android:textSize="14sp"
@@ -415,6 +418,7 @@
 
                         <!-- Income Certificate -->
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cvIncomeCertificate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -438,6 +442,7 @@
                                     android:background="@drawable/bg_icon_indigo"
                                     android:padding="8dp"
                                     android:src="@drawable/ic_description"
+                                    android:contentDescription="Income Certificate"
                                     app:tint="@color/indigo" />
 
                                 <TextView
@@ -463,6 +468,7 @@
 
                         <!-- Caste Certificate -->
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cvCasteCertificate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -486,6 +492,7 @@
                                     android:background="@drawable/bg_icon_orange"
                                     android:padding="8dp"
                                     android:src="@drawable/ic_group"
+                                    android:contentDescription="Caste Certificate"
                                     app:tint="@color/orange" />
 
                                 <TextView
@@ -511,6 +518,7 @@
 
                         <!-- Residence Certificate -->
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cvResidenceCertificate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -534,6 +542,7 @@
                                     android:background="@drawable/bg_icon_blue"
                                     android:padding="8dp"
                                     android:src="@drawable/ic_home"
+                                    android:contentDescription="Residence Certificate"
                                     app:tint="@color/blue" />
 
                                 <TextView
@@ -559,6 +568,7 @@
 
                         <!-- Birth Certificate -->
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cvBirthCertificate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -582,6 +592,7 @@
                                     android:background="@drawable/bg_icon_pink"
                                     android:padding="8dp"
                                     android:src="@drawable/ic_child_care"
+                                    android:contentDescription="Birth Certificate"
                                     app:tint="@color/pink" />
 
                                 <TextView
@@ -608,8 +619,6 @@
                     </GridLayout>
 
                 </LinearLayout>
-
-                <!-- ===== NEW SCHEMES SECTION ===== -->
 
             </LinearLayout>
 
