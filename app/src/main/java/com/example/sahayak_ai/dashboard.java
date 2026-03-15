@@ -9,9 +9,11 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -20,26 +22,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Map;
+
 public class dashboard extends AppCompatActivity {
 
     private static final String TAG = "DashboardActivity";
     private TextView tvTotalAppsCount, tvApprovedCount, tvRejectedCount, tvPendingCount;
     private TextView tvTotalAppsPercent, tvApprovedPercent, tvRejectedPercent, tvPendingPercent;
-    private DatabaseReference mDatabase;
+    private StatsViewModel statsViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
-        
-        // Initialize Firebase Database with explicit URL
-        try {
-            mDatabase = FirebaseDatabase.getInstance("https://sahayakai-56b58-default-rtdb.firebaseio.com/").getReference();
-        } catch (Exception e) {
-            Log.e(TAG, "Firebase initialization failed", e);
-            mDatabase = FirebaseDatabase.getInstance().getReference();
-        }
 
         // Initialize TextViews
         tvTotalAppsCount = findViewById(R.id.tvTotalAppsCount);
@@ -58,68 +54,67 @@ public class dashboard extends AppCompatActivity {
             return insets;
         });
 
+        setupServiceClickListeners();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.nav_services) {
-                startActivity(new Intent(dashboard.this, applications.class));
+                startActivity(new Intent(dashboard.this, ServiceActivity.class));
                 return true;
             } else if (itemId == R.id.nav_schemes) {
                 startActivity(new Intent(dashboard.this, schemes.class));
+                return true;
+            } else if (itemId == R.id.nav_profile) {
+                startActivity(new Intent(dashboard.this, ProfileActivity.class));
                 return true;
             }
             return false;
         });
 
-        fetchDashboardStats();
+        TextView tvViewAllServices = findViewById(R.id.tvViewAllServices);
+        if (tvViewAllServices != null) {
+            tvViewAllServices.setOnClickListener(v -> {
+                startActivity(new Intent(dashboard.this, ServiceActivity.class));
+            });
+        }
+
+        // MVVM Integration: Observe Stats
+        statsViewModel = new ViewModelProvider(this).get(StatsViewModel.class);
+        statsViewModel.getStats().observe(this, this::updateStatsUI);
     }
 
-    private void fetchDashboardStats() {
-        Log.d(TAG, "Fetching stats from path: stats");
-        mDatabase.child("stats").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    Log.d(TAG, "Snapshot data: " + snapshot.getValue());
-                    
-                    // Update Counts
-                    String total = snapshot.child("total_apps").getValue() != null ? 
-                                   String.valueOf(snapshot.child("total_apps").getValue()) : "0";
-                    String approved = snapshot.child("approved").getValue() != null ? 
-                                      String.valueOf(snapshot.child("approved").getValue()) : "0";
-                    String rejected = snapshot.child("rejected").getValue() != null ? 
-                                      String.valueOf(snapshot.child("rejected").getValue()) : "0";
-                    String pending = snapshot.child("pending").getValue() != null ? 
-                                     String.valueOf(snapshot.child("pending").getValue()) : "0";
+    private void updateStatsUI(Map<String, Object> stats) {
+        if (stats == null) return;
 
-                    tvTotalAppsCount.setText(total);
-                    tvApprovedCount.setText(approved);
-                    tvRejectedCount.setText(rejected);
-                    tvPendingCount.setText(pending);
+        // Update Counts
+        tvTotalAppsCount.setText(String.valueOf(stats.getOrDefault("totalApps", 0)));
+        tvApprovedCount.setText(String.valueOf(stats.getOrDefault("approved", 0)));
+        tvPendingCount.setText(String.valueOf(stats.getOrDefault("pending", 0)));
+        tvRejectedCount.setText(String.valueOf(stats.getOrDefault("rejected", 0)));
 
-                    // Update Percentages
-                    if (snapshot.hasChild("total_percent")) {
-                        tvTotalAppsPercent.setText(String.valueOf(snapshot.child("total_percent").getValue()));
-                    }
-                    if (snapshot.hasChild("approved_percent")) {
-                        tvApprovedPercent.setText(String.valueOf(snapshot.child("approved_percent").getValue()));
-                    }
-                    if (snapshot.hasChild("rejected_percent")) {
-                        tvRejectedPercent.setText(String.valueOf(snapshot.child("rejected_percent").getValue()));
-                    }
-                    if (snapshot.hasChild("pending_percent")) {
-                        tvPendingPercent.setText(String.valueOf(snapshot.child("pending_percent").getValue()));
-                    }
-                } else {
-                    Log.d(TAG, "Snapshot does not exist at path: stats");
-                }
-            }
+        // Update Badges
+        tvTotalAppsPercent.setText(String.valueOf(stats.getOrDefault("totalAppsBadge", "+0%")));
+        tvApprovedPercent.setText(String.valueOf(stats.getOrDefault("approvedBadge", "+0%")));
+        tvPendingPercent.setText(String.valueOf(stats.getOrDefault("pendingBadge", "+0%")));
+        tvRejectedPercent.setText(String.valueOf(stats.getOrDefault("rejectedBadge", "+0%")));
+    }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Database error: " + error.getMessage());
-                Toast.makeText(dashboard.this, "Failed to load stats: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void setupServiceClickListeners() {
+        CardView cvIncome = findViewById(R.id.cvIncomeCertificate);
+        CardView cvCaste = findViewById(R.id.cvCasteCertificate);
+        CardView cvResidence = findViewById(R.id.cvResidenceCertificate);
+        CardView cvBirth = findViewById(R.id.cvBirthCertificate);
+
+        if (cvIncome != null) cvIncome.setOnClickListener(v -> openApplications("income_certificate"));
+        if (cvCaste != null) cvCaste.setOnClickListener(v -> openApplications("caste_certificate"));
+        if (cvResidence != null) cvResidence.setOnClickListener(v -> openApplications("residence_certificate"));
+        if (cvBirth != null) cvBirth.setOnClickListener(v -> openApplications("birth_certificate"));
+    }
+
+    private void openApplications(String serviceType) {
+        Intent intent = new Intent(dashboard.this, applications.class);
+        intent.putExtra("SERVICE_TYPE", serviceType);
+        startActivity(intent);
     }
 }

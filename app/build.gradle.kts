@@ -5,11 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.sahayak_ai"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.sahayak_ai"
@@ -40,6 +36,9 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.10.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-auth:21.5.1")
+
 
     implementation(libs.appcompat)
     implementation(libs.material)
